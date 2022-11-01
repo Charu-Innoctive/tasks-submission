@@ -1,0 +1,23 @@
+create table city_master
+(id int primary key,
+city_name varchar(22),
+city_state varchar(25),
+added_date date)
+
+create table user_master
+(id int primary key,
+name varchar(15),
+contact_number int,
+email_id varchar(20),
+blood_group varchar(10),
+city_id int FOREIGN KEY references city_master(id))
+
+stored procedure is a prepared sql stt that once coded can be reused again and again, single sp can be used over the network by several users and we all can be using different input data, also reduce network traffic and increase the performance & if we modify the sp, anyone who's using the stored procedure will get update.
+simple ex:
+ create procedure test as 
+ select*from user_master
+ 
+ to execute the stored procedure run
+ 
+ exec test
+

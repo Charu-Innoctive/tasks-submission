@@ -1,0 +1,19 @@
+''' Given an "out" string length 4, such as "<<>>", and a word, return a new string
+where the word is in the middle of the out string, e.g. "<<word>>".
+make_out_word('<<>>', 'Yay') → '<<Yay>>'
+
+make_out_word('<<>>', 'WooHoo') → '<<WooHoo>>'
+make_out_word('[[]]', 'word') → '[[word]]' 
+'''
+
+#Defining the function
+def make_out_word(out_str,word):
+    frst_half=out_str[:len(out_str)//2]
+    sec_half=out_str[len(out_str)//2:]
+    res=frst_half+word+sec_half
+    print(res)
+
+#Providing arguments to the function
+make_out_word('<<>>','WooHoo')
+make_out_word('[[]]','word')
+
