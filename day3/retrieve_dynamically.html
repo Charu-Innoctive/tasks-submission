@@ -1,0 +1,33 @@
+<link href="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.21.0/dist/bootstrap-table.min.js"></script>
+<table
+  id="table"
+  data-toggle="table"
+  data-height="460"
+  data-ajax="ajaxRequest"
+  data-search="true"
+  data-side-pagination="server"
+  data-pagination="true">
+  <thead>
+    <tr>
+      <th data-field="id">ID</th>
+      <th data-field="name">Name</th>
+      <th data-field="contact_number">Contact Number</th>
+      <th data-field="email_id">Email Id</th>
+      <th data-field="blood_group">Blood Group</th>
+      <th data-field="city_id">City Id</th>
+      <th data-field="added_date">Added Date</th>
+    </tr>
+  </thead>
+</table>
+
+<script>
+  // your custom ajax request here
+  function ajaxRequest(params) {
+    var url = 'https://examples.wenzhixin.net.cn/examples/bootstrap_table/data'
+    $.get(url + '?' + $.param(params.data)).then(function (res) {
+      params.success(res)
+    })
+  }
+</script>
